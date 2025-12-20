@@ -2,12 +2,29 @@ import './main.css';
 
 import { Button } from '@mui/material';
 
-export default function Main() {
+type MainProps = {
+    isMenuOpen: boolean;
+};
+
+import { useState } from 'react';
+
+import ForUser from './ForUser';
+import ArtistsTop from "./artistsTop.tsx";
+import MusicPlayer from './MusicPlayer';
+import AlbumList from "./albumUL.tsx";
+
+import ArtistPage from "./artistPageLI.tsx";
+
+import {PlayerProvider} from "../src/playerContext.tsx";
+
+export default function Main({isMenuOpen}: MainProps) {
+
+    const [currentId, setCurrentId] = useState<number | null>(null);
 
     return (
         <div className="main">
 
-            <div className="main-left">
+            <div className={`main-left ${isMenuOpen ? 'open' : 'closed'}`}>
                 <ul>
 
                     <li>
@@ -33,9 +50,17 @@ export default function Main() {
                 </ul>
             </div>
 
-            <div className="main-center">
-
-            </div>
+             <PlayerProvider>
+                <div className="main-center" style={{ paddingLeft:  isMenuOpen ? '250px' : '43px' }}>
+                    {/*
+                    <ForUser />
+                    <ArtistsTop />
+                    <MusicPlayer />
+                    <AlbumList />
+                    */}
+                    <ArtistPage />
+                </div>
+            </PlayerProvider>
 
             <div className="main-right">
 

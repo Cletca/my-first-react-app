@@ -1,0 +1,72 @@
+export const Playlists = [
+    {
+        id: 1,
+        name: "Crystal Universe",
+        genre: "electro-pop / art-pop",
+        artist: "Grimes, The Weeknd, Dua Lipa, Charlie Puth",
+        img: "Img/album-img/1.jpg",
+    },
+    {
+        id: 2,
+        name: "Ashes of Tomorrow",
+        genre: "alternative rock / indie rock",
+        artist: "Arctic Monkeys, Linkin Park, Imagine Dragons",
+        img: "Img/album-img/2.jpg",
+    },
+    {
+        id: 3,
+        name: "Blue Velvet Dreams",
+        genre: "soul / jazz-pop",
+        artist: "Adele, Sam Smith, Norah Jones",
+        img: "Img/album-img/3.jpg",
+    },
+    {
+        id: 4,
+        name: "Digital Riot",
+        genre: "hip-hop / electronic / trap",
+        artist: "Travis Scott, Eminem, Doja Cat, Post Malone",
+        img: "Img/album-img/4.jpg",
+    },
+    {
+        id: 5,
+        name: "Aurora Skies",
+        genre: "indie pop / synth-pop",
+        artist: "The 1975, Coldplay, Hasley",
+        img: "Img/album-img/5.jpg",
+    },
+    {
+        id: 6,
+        name: "Voices in the Dark",
+        genre: "dark pop / art-indie",
+        artist: "Billie Eilish, Lana Del Rey, Florence + The Machine",
+        img: "Img/album-img/6.jpg",
+    },
+    {
+        id: 7,
+        name: "Pulse of the Streets",
+        genre: "pop-rap / R&B",
+        artist: "Drake, The Weeknd, SZA",
+        img: "Img/album-img/7.jpg",
+    },
+    {
+        id: 8,
+        name: "New Age Titans",
+        genre: "pop / indie / rock",
+        artist: "Imagine Dragons, Ed Sheeran, OneRepublic",
+        img: "Img/album-img/8.jpg",
+    },
+    {
+        id: 9,
+        name: "Gravity Crash",
+        genre: "EDM / pop",
+        artist: "Calvin Harris, David Guetta, Dua Lipa",
+        img: "Img/album-img/9.jpg",
+    },
+    {
+        id: 10,
+        name: "Echoes of Infinity",
+        genre: "cinematic pop / orchestrual electronic",
+        artist: "Hans Zimmer, Aurora, Woodkid",
+        img: "Img/album-img/10.jpg",
+    }
+]

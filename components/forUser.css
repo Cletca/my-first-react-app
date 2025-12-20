@@ -1,0 +1,88 @@
+.for-user-ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.for-user-ul li {
+    flex: 0 0 200px;
+}
+
+.for-user-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.for-user-slider {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.for-you {
+    margin: 30px;
+    border-bottom: solid 2px black;
+}
+.for-user-window {
+    overflow: hidden;
+    flex: 1;
+}
+
+.for-user-btn {
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    z-index: 5;
+}
+
+.prev-btn,
+.next-btn {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translateX(0);
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+}
+.prev-btn.visible {
+    opacity: 1;
+    transform: translateX(25px);
+    background: black;
+    transition: 0.5s ease-in-out;
+    z-index: 6;
+}
+.next-btn.visible {
+    opacity: 1;
+    transform: translateX(-25px);
+    background: black;
+    transition: 0.5s ease-in-out;
+    z-index: 6;
+}
+
+@media (max-width: 480px) {
+    .for-user-slider-button {
+        display: none !important;
+    }
+    .for-user-window {
+        padding: 0 15px 0 15px;
+    }
+    .for-user-slide {
+        overflow-x: auto;
+    }
+}

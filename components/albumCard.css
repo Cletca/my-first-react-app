@@ -1,0 +1,60 @@
+.album-card {
+    width: 200px;
+    height: 250px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    border-radius: 15px;
+}
+.album-card:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.album-card-top {
+    width: 100%;
+    height: 65%;
+}
+.album-card-top img {
+    width: 90%;
+    height: 95%;
+    margin: 10px 10px 0 10px;
+    background-color: white;
+}
+.album-card span {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: black;
+}
+
+.album-card-bottom {
+    width: 100%;
+    height: 35%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.album-title {
+    width: 100%;
+    height: 29px;
+    font-size: 25px;
+    margin: 0;
+    font-weight: bold;
+}
+.album-artists {
+    width: 100%;
+    height: 17px;
+    font-size: 17px;
+}
+.album-genre {
+    width: 100%;
+    height: 15px;
+    font-size: 13px;
+}

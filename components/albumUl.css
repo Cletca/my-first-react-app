@@ -1,0 +1,64 @@
+.album-container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.album-ul {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    gap: 15px;
+    list-style: none;
+}
+.album-btn {
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    z-index: 5;
+}
+.prev-btn,
+.next-btn {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translateX(0);
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+}
+.prev-btn.visible {
+    opacity: 1;
+    transform: translateX(25px);
+    background: black;
+    transition: 0.5s ease-in-out;
+    z-index: 6;
+}
+.next-btn.visible {
+    opacity: 1;
+    transform: translateX(-25px);
+    background: black;
+    transition: 0.5s ease-in-out;
+    z-index: 6;
+}
+.album-title-container {
+    margin: 30px;
+    border-bottom: 2px solid black;
+}
+.album-title {
+    margin-bottom: 8px;
+}

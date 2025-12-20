@@ -1,0 +1,28 @@
+.artist-container {
+    width: 200px;
+    height: 250px;
+    border-radius: 15px;
+    border: none;
+    background: none;
+}
+.artist-container:hover {
+    background: gray;
+    cursor: pointer;
+}
+
+.artist-card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 10px 0;
+}
+.artist-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.artist-name,
+.artist-subs {
+    margin: 0 0 5px 10px;
+    color: black;
+}

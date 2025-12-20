@@ -1,14 +1,24 @@
 import './navBar.css';
-import { Button } from '@mui/material';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-export default function NavBar() {
+import { Button } from '@mui/material';
+
+import DashBtn from "./dashBtn.tsx";
+import SearchBox from "./Search.tsx";
+import { MusicList } from '../src/data/Music.ts';
+
+type NavBarProps = {
+    toggleMenu: () => void;
+};
+
+export default function NavBar({toggleMenu}: NavBarProps) {
+    const tracks = MusicList;
+
     return (
         <nav>
             <div className="navbar-btns">
                 <ul className="navbar-btn-list">
                     <li className="menu-btn">
-                        <Button variant="text" color="primary">
+                        <Button variant="text" color="primary" onClick={toggleMenu}>
                             <img src="Img/Logo.png" alt="Logo" style={{ width: '35px' }} />
                         </Button>
                     </li>
@@ -25,20 +35,11 @@ export default function NavBar() {
             </div>
 
             <div className="navbar-search">
-                <ul className="search">
-                    <li className="search-loupe">
-                        <img src="Img/Green-Loupe.png" alt="Loupe" style={{ width: '25px' }} />
-                    </li>
-                    <li className="search-input">
-                        <input className="search-input" type="text" placeholder="Search..." />
-                    </li>
-                </ul>
+                <SearchBox tracks={tracks} />
             </div>
 
             <div className="navbar-profile">
-                <Button variant="text">
-                    <AccountCircleIcon className="text-success" />
-                </Button>
+                <DashBtn />
             </div>
         </nav>
     );

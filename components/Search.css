@@ -1,0 +1,18 @@
+.search-suggestions {
+    position: absolute;
+    width: 397px;
+}
+
+.suggestion-item {
+    padding-bottom: 7px;
+    color: #fff;
+    background: #1E1E1E;
+}
+.suggestion-item:hover {
+    cursor: pointer;
+    background-color: dimgray;
+}
+
+.focus {
+    border: 2px solid cornflowerblue;
+}

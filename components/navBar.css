@@ -5,16 +5,23 @@ li {
     list-style-type: none;
 }
 nav {
+    position: fixed;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding-left: 43px;
+    padding-right: 43px;
+    background: #1E1E1E;
+    z-index: 10;
 }
 .navbar-btn-list {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    padding-left: 0;
 }
 .search {
     display: flex;
@@ -31,13 +38,19 @@ nav {
     z-index: 1;
 }
 .search-input {
-    width: 300px;
+    width: 330px;
     height: 30px;
+    padding: 0;
+    color: #fff;
     background: darkslategray;
     border: none;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
     z-index: 10;
+}
+.search-input:focus {
+    outline: none;
+    border: none;
 }
 
 .navbar-btn-list,
@@ -54,4 +67,39 @@ nav {
 }
 .navbar-search {
     width: 450px;
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 0;
+    }
+
+    .navbar-btn-list li:not(:first-child) {
+        display: none;
+    }
+
+    .navbar-search ul {
+        padding: 0;
+    }
+    .search-input {
+        width: 100%;
+    }
+
+    .navbar-btn-list {
+        width: 10%;
+    }
+    .navbar-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+    }
+    .navbar-profile {
+        width: 15%;
+    }
+    .navbar-profile button svg {
+        width: 35px;
+        height: 35px;
+    }
 }

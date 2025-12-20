@@ -1,0 +1,96 @@
+.artist-page-card {
+    width: 500px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: darkslategray;
+}
+.artist-page-card:hover {
+
+}
+.card-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.card-number {
+    width: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-container img {
+    width: 45px;
+    height: 45px;
+    background: green;
+}
+
+.card-content {
+    width: 420px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-name-views {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-btns {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fav-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    transform: translateX(0);
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+.fav-btn.visible {
+    opacity: 1;
+    transform: translateX(-40px);
+    transition: 0.5s ease-in-out;
+}
+.fav-btn:hover {
+    background-color: lightgray;
+}
+
+.song-options {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    opacity: 0;
+    transform: translateX(0);
+    transition: 0.5s ease-in-out;
+}
+.song-options.visible {
+    opacity: 1;
+    transform: translateX(40px);
+    transition: 0.5s ease-in-out;
+}
+.song-options:hover {
+    background-color: lightgray;
+}

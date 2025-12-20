@@ -1,0 +1,17 @@
+.artists-list {
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+.artists-list li {
+    flex: 0 0 200px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
