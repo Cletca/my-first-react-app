@@ -20,9 +20,9 @@ import RepeatIcon from '@mui/icons-material/Repeat'; {/* Loop */}
 import RepeatOneIcon from '@mui/icons-material/RepeatOne'; {/* Active loop */}
 
 import { useState, useEffect, useRef } from "react";
-import {usePlayer} from "../src/playerContext.tsx";
+import {usePlayer} from "../playerContext.tsx";
 
-import { MusicList } from '../src/data/Music.ts';
+import { MusicList } from '../data/Music.ts';
 
 export default function MusicPlayer() {
 

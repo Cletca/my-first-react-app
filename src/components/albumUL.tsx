@@ -1,6 +1,6 @@
 import './albumUl.css';
 
-import { Playlists } from "../src/data/Playlists";
+import { Playlists } from "../data/Playlists.ts";
 import AlbumCard from "./albumCard.tsx";
 import {useState} from "react";
 

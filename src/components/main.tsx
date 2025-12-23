@@ -8,14 +8,14 @@ type MainProps = {
 
 import { useState } from 'react';
 
-import ForUser from './ForUser';
+import ForUser from './forUser.tsx';
 import ArtistsTop from "./artistsTop.tsx";
-import MusicPlayer from './MusicPlayer';
+import MusicPlayer from './musicPlayer.tsx';
 import AlbumList from "./albumUL.tsx";
 
-import ArtistPage from "./artistPageLI.tsx";
+import ArtistPage from "./artistPage.tsx";
 
-import {PlayerProvider} from "../src/playerContext.tsx";
+import {PlayerProvider} from "../playerContext.tsx";
 
 export default function Main({isMenuOpen}: MainProps) {
 
@@ -52,13 +52,14 @@ export default function Main({isMenuOpen}: MainProps) {
 
              <PlayerProvider>
                 <div className="main-center" style={{ paddingLeft:  isMenuOpen ? '250px' : '43px' }}>
-                    {/*
+
                     <ForUser />
                     <ArtistsTop />
                     <MusicPlayer />
                     <AlbumList />
-                    */}
+
                     <ArtistPage />
+
                 </div>
             </PlayerProvider>
 

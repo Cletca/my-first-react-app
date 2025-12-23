@@ -1,6 +1,6 @@
 import './artistsTop.css';
 
-import ArtistAvatarUL from "./artistAvatarUL";
+import ArtistAvatarUL from "./artistAvatarUL.tsx";
 
 import { useState } from "react";
 

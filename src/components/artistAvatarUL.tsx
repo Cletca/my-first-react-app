@@ -1,6 +1,6 @@
-import { artists } from "../src/data/artists";
+import { artists } from "../data/artists.ts";
 import './artistAvatarUL.css';
-import ArtistAvatar from "../components/ArtistAvatar";
+import ArtistAvatar from "./artistAvatar.tsx";
 
 export default function ArtistAvatarUL() {
     return (

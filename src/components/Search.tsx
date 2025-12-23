@@ -32,7 +32,7 @@ export default function SearchBox({ tracks }) {
         <div className="search-box">
             <ul className="search">
                 <li className={`search-loupe ${focus ? "focus" : ""}`}>
-                    <img src="Img/Green-Loupe.png" alt="Loupe" style={{ width: '25px' }} />
+                    <img src="../../Img/Green-Loupe.png" alt="Loupe" style={{ width: '25px' }} />
                 </li>
 
                 <li className={`search-input ${focus ? "focus" : ""}`}>

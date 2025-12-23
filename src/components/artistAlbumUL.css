@@ -1,0 +1,35 @@
+.artist-album-title-container {
+    margin: 30px;
+    border-bottom: 2px solid black;
+}
+.artist-album-title {
+    margin-bottom: 8px;
+}
+
+.artist-album-container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.artist-album-btn {
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+    z-index: 5;
+}
+.artist-album-ul {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    gap: 15px;
+    list-style: none;
+}

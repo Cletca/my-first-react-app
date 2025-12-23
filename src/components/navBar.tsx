@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 
 import DashBtn from "./dashBtn.tsx";
 import SearchBox from "./Search.tsx";
-import { MusicList } from '../src/data/Music.ts';
+import { MusicList } from '../data/Music.ts';
 
 type NavBarProps = {
     toggleMenu: () => void;
@@ -19,7 +19,7 @@ export default function NavBar({toggleMenu}: NavBarProps) {
                 <ul className="navbar-btn-list">
                     <li className="menu-btn">
                         <Button variant="text" color="primary" onClick={toggleMenu}>
-                            <img src="Img/Logo.png" alt="Logo" style={{ width: '35px' }} />
+                            <img src="../../Img/Logo.png" alt="Logo" style={{ width: '35px' }} />
                         </Button>
                     </li>
                     <li className="home-btn">

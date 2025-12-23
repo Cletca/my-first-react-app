@@ -1,5 +1,5 @@
-import MusicCard from "./musicCard";
-import {MusicList} from "../src/data/Music.ts";
+import MusicCard from "./musicCard.tsx";
+import {MusicList} from "../data/Music.ts";
 
 export default function MusicCardUL () {
     return (

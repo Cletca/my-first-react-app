@@ -2,9 +2,9 @@ import './App.css'
 
 import { useState } from 'react';
 
-import NavBar from "../components/navBar.tsx";
-import Main from "../components/main.tsx";
-import Footer from "../components/footer.tsx";
+import NavBar from "./components/navBar.tsx";
+import Main from "./components/main.tsx";
+import Footer from "./components/footer.tsx";
 
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

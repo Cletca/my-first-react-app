@@ -1,7 +1,7 @@
 import './musicCard.css';
 
 import { Button } from "@mui/material";
-import {usePlayer} from "../src/playerContext.tsx";
+import {usePlayer} from "../playerContext.tsx";
 
 export interface MusicCardProps {
     id: number;
