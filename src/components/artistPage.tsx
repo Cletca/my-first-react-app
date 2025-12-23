@@ -17,6 +17,8 @@ import ArtistTrackUL from "./ArtistTrackUL.tsx";
 
 export default function ArtistPage() {
 
+    const [open, setOpen] = useState(false);
+
     const [opacity, setOpacity] = useState(1);
 
     useEffect(() => {
@@ -34,7 +36,7 @@ export default function ArtistPage() {
     }, []);
 
     return (
-        <div className="main-artist">
+        <div className={`main-artist ${open ? "" : "hidden"}`}>
             <div
                 className="top-container"
                 style={{ opacity: opacity }}

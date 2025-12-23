@@ -8,8 +8,16 @@ export interface ArtistProps {
 }
 
 export default function ArtistAvatar({ image, name, subs }: ArtistProps) {
+
+     function artistHandleClick() {
+
+    }
+
     return (
-            <div className="artist-container">
+            <div
+                className="artist-container"
+                onClick={() => {artistHandleClick()}}
+            >
                     <div className="artist-card-image">
                         <Avatar
                             src={image}
