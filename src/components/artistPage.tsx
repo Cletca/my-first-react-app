@@ -12,12 +12,12 @@ import { useEffect, useState } from "react";
 
 // Components
 import ArtistAlbumList from "./artistAlbumUL.tsx";
-
 import ArtistTrackUL from "./ArtistTrackUL.tsx";
 
 export default function ArtistPage() {
 
-    const [open, setOpen] = useState(false);
+    const img = "#";
+    const name = "Artist name";
 
     const [opacity, setOpacity] = useState(1);
 
@@ -36,7 +36,7 @@ export default function ArtistPage() {
     }, []);
 
     return (
-        <div className={`main-artist ${open ? "" : "hidden"}`}>
+        <div className="ArtistPage">
             <div
                 className="top-container"
                 style={{ opacity: opacity }}
@@ -44,7 +44,7 @@ export default function ArtistPage() {
 
                 <Avatar
                     alt="#"
-                    src="#"
+                    src={img}
                     sx={{
                         width: "225px",
                         height: "225px",
@@ -53,7 +53,7 @@ export default function ArtistPage() {
                     }}
                 />
 
-                <h2 className="artist-page-name">{/*artist*/}Name</h2>
+                <h2 className="artist-page-name">{name}</h2>
 
             </div>
             <div className="bottom-container">

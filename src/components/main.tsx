@@ -6,20 +6,23 @@ type MainProps = {
     isMenuOpen: boolean;
 };
 
-import { useState } from 'react';
+import {useContext} from 'react';
 
-import ForUser from './forUser.tsx';
-import ArtistsTop from "./artistsTop.tsx";
-import MusicPlayer from './musicPlayer.tsx';
-import AlbumList from "./albumUL.tsx";
+import HomePage from "./homePage.tsx";
 
 import ArtistPage from "./artistPage.tsx";
 
-import {PlayerProvider} from "../playerContext.tsx";
+import {NavigationContext} from "../navigationContext.tsx";
 
 export default function Main({isMenuOpen}: MainProps) {
 
-    const [currentId, setCurrentId] = useState<number | null>(null);
+    const navContext = useContext(NavigationContext);
+
+    if (!navContext) return null;
+
+    const { currentPage, setCurrentPage } = navContext;
+
+    console.log(currentPage);
 
     return (
         <div className="main">
@@ -28,7 +31,7 @@ export default function Main({isMenuOpen}: MainProps) {
                 <ul>
 
                     <li>
-                        <Button>Home</Button>
+                        <Button onClick={() => setCurrentPage("home")}>Home</Button>
                     </li>
                     <li>
                         <Button>Library</Button>
@@ -50,18 +53,10 @@ export default function Main({isMenuOpen}: MainProps) {
                 </ul>
             </div>
 
-             <PlayerProvider>
                 <div className="main-center" style={{ paddingLeft:  isMenuOpen ? '250px' : '43px' }}>
-
-                    <ForUser />
-                    <ArtistsTop />
-                    <MusicPlayer />
-                    <AlbumList />
-
-                    <ArtistPage />
-
+                    {currentPage === "home" && <HomePage />}
+                    {currentPage === "artist" && <ArtistPage />}
                 </div>
-            </PlayerProvider>
 
             <div className="main-right">
 

@@ -5,18 +5,15 @@ export interface ArtistProps {
     image: string;
     name: string;
     subs: string;
+    onClick: () => void;
 }
 
-export default function ArtistAvatar({ image, name, subs }: ArtistProps) {
-
-     function artistHandleClick() {
-
-    }
+export default function ArtistAvatar({ image, name, subs, onClick }: ArtistProps) {
 
     return (
             <div
                 className="artist-container"
-                onClick={() => {artistHandleClick()}}
+                onClick={onClick}
             >
                     <div className="artist-card-image">
                         <Avatar

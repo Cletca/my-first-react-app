@@ -6,12 +6,21 @@ import DashBtn from "./dashBtn.tsx";
 import SearchBox from "./Search.tsx";
 import { MusicList } from '../data/Music.ts';
 
+import {NavigationContext} from "../navigationContext.tsx";
+import {useContext} from "react";
+
 type NavBarProps = {
     toggleMenu: () => void;
 };
 
 export default function NavBar({toggleMenu}: NavBarProps) {
     const tracks = MusicList;
+
+    const navContext = useContext(NavigationContext);
+
+    if (!navContext) return null;
+
+    const { setCurrentPage } = navContext;
 
     return (
         <nav>
@@ -23,7 +32,7 @@ export default function NavBar({toggleMenu}: NavBarProps) {
                         </Button>
                     </li>
                     <li className="home-btn">
-                        <Button variant="text" color="success">Home</Button>
+                        <Button onClick={() => setCurrentPage("home")} variant="text" color="success">Home</Button>
                     </li>
                     <li className="playlists-btn">
                         <Button variant="text" color="success">Playlist</Button>

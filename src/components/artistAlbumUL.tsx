@@ -56,7 +56,7 @@ export default function ArtistAlbumList() {
                     }}
                 >
                     {Playlists.map((album) => (
-                        <li key={album.id}>
+                        <li key={`artist-album-${album.id}`}>
                             <AlbumCard
                                 image={album.img}
                                 name={album.name}

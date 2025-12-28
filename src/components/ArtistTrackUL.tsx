@@ -8,32 +8,32 @@ export default function ArtistTrackUL() {
         {
             id: 1,
             name: "Track name",
-            views: 1458938,
-            time: 203,
+            views: 1424522,
+            time: 201,
         },
          {
-             id: 1,
+             id: 2,
+             name: "Track name",
+             views: 145426,
+             time: 573,
+         },
+         {
+             id: 3,
+             name: "Track name",
+             views: 1427348,
+             time: 179,
+         },
+         {
+             id: 4,
              name: "Track name",
              views: 1458938,
              time: 203,
          },
          {
-             id: 1,
+             id: 5,
              name: "Track name",
-             views: 1458938,
-             time: 203,
-         },
-         {
-             id: 1,
-             name: "Track name",
-             views: 1458938,
-             time: 203,
-         },
-         {
-             id: 1,
-             name: "Track name",
-             views: 1458938,
-             time: 203,
+             views: 14554738,
+             time: 223,
          }
     ];
 
