@@ -22,7 +22,7 @@ import RepeatOneIcon from '@mui/icons-material/RepeatOne'; {/* Active loop */}
 import { useState, useEffect, useRef } from "react";
 import {usePlayer} from "../playerContext.tsx";
 
-import { MusicList } from '../data/Music.ts';
+import {MusicList} from "../data/Music.ts";
 
 export default function MusicPlayer() {
 
@@ -35,7 +35,8 @@ export default function MusicPlayer() {
     const [timer, setTimer] = useState(0);
     const [displayTime, setDisplayTime] = useState("0:00");
     const audioRef = useRef<HTMLAudioElement>(null);
-    const playerContext = usePlayer();
+    const { currentTrack, setCurrentTrack } = usePlayer();
+
 
     function volumeShow() {
         setHidden((prev) => !prev);
@@ -106,31 +107,34 @@ export default function MusicPlayer() {
             audio.removeEventListener('loadedmetadata', onLoaded);
             audio.removeEventListener('ended', onEnded);
         };
-    }, []);
+    }, [currentTrack]);
 
     {/* AudioRef ID */}
     useEffect(() => {
-        if (!playerContext || playerContext.currentId === null) return;
+        if (!currentTrack || !audioRef.current) return;
 
-        const track = MusicList.find((m) => m.id === playerContext.currentId);
+        const trackSrc = currentTrack.src?.replace(/^public\//, "") || "";
+        console.log("Playing track is: " + trackSrc);
 
-        if (track && audioRef.current) {
-            audioRef.current.src = track.src.replace(/^public\//, "");
+        if (audioRef.current.src !== window.location.origin + "/" + trackSrc) {
+            audioRef.current.src = trackSrc;
+            audioRef.current.load();
 
             audioRef.current.play()
                 .then(() => {
                     setPause(false);
                     setIsOpen(true);
                 })
-                .catch(() => {});
+                .catch((error) => console.log("Player error:    ", error));
         }
-    }, [playerContext?.currentId]);
+
+    }, [currentTrack]);
 
     {/* Close Player */}
     function closePlayer() {
         setIsOpen(false);
         setPause(true);
-        playerContext?.setCurrentId(null);
+        setCurrentTrack(null);
     }
 
     {/* Play/Pause */}
@@ -146,46 +150,18 @@ export default function MusicPlayer() {
 
     {/* Next */}
     const playNext = () => {
-        if (!playerContext) return;
-
-        const currentIndex = MusicList.findIndex(
-            (m) => m.id === playerContext.currentId
-        );
-
-        const nextIndex =
-            currentIndex === -1
-                ? 0
-                : (currentIndex + 1) % MusicList.length;
-
-        const nextTrack = MusicList[nextIndex];
-
-        playerContext.setCurrentTrack(
-            nextTrack.id,
-            nextTrack.name,
-            nextTrack.image
-        );
+        if (!currentTrack) return;
+        const currentIndex = MusicList.findIndex((item) => item.id === currentTrack.id);
+        const nextTrack = MusicList[(currentIndex + 1) % MusicList.length];
+        setCurrentTrack(nextTrack);
     };
 
     {/* Prev */}
     const playPrev = () => {
-        if (!playerContext) return;
-
-        const currentIndex = MusicList.findIndex(
-            (m) => m.id === playerContext.currentId
-        );
-
-        const prevIndex =
-            currentIndex === -1
-                ? 0
-                : (currentIndex - 1 + MusicList.length) % MusicList.length;
-
-        const prevTrack = MusicList[prevIndex];
-
-        playerContext.setCurrentTrack(
-            prevTrack.id,
-            prevTrack.name,
-            prevTrack.image
-        );
+        if (!currentTrack) return;
+        const currentIndex = MusicList.findIndex((item) => item.id === currentTrack.id);
+        const prevTrack = MusicList[(currentIndex - 1) % MusicList.length];
+        setCurrentTrack(prevTrack);
     };
 
     {/* Loop */}
@@ -215,7 +191,8 @@ export default function MusicPlayer() {
              audio.currentTime = seekTime;
          }
      }
-    {/* Display timer  const displayTimer = 1 */}
+
+    if (!currentTrack && !isOpen) return null;
 
     return (
         <div className={`mini-player ${isOpen ? "open" : ""}`}>
@@ -235,14 +212,14 @@ export default function MusicPlayer() {
                 <div className="song-img-container">
                     <img
                         className="song-img"
-                        src={playerContext?.currentImage ?? "#"}
-                        alt={playerContext?.currentName ?? "#"}
+                        src={currentTrack?.image}
+                        alt={currentTrack?.name}
                     />
                 </div>
 
                 <div className="song-name-container">
                     <span className="song-name">
-                        {playerContext?.currentName ?? "Song name"}
+                        {currentTrack?.name}
                     </span>
                 </div>
 

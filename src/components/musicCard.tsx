@@ -12,11 +12,17 @@ export interface MusicCardProps {
     views: string;
 }
 
-export default function MusicCard({ id, image, name, author, views }: MusicCardProps) {
-    const playerContext = usePlayer();
+export default function MusicCard({ id, image, name, author, views, src}: MusicCardProps) {
+    const { setCurrentTrack } = usePlayer();
 
     function handleCardClick() {
-        playerContext?.setCurrentTrack(id, name, image);
+        setCurrentTrack({
+            id: id,
+            name: name,
+            image: image,
+            artist: author,
+            src: src,
+        });
     }
 
     return (

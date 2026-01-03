@@ -13,6 +13,7 @@ export default function MusicCardUL () {
                         name={music.name}
                         author={music.author}
                         views={music.views}
+                        src={music.src}
                     />
                 </li>
             ))}

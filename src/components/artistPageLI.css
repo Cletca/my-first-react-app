@@ -23,6 +23,7 @@
 .card-number {
     width: 20px;
     height: 100%;
+    margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +41,11 @@
     align-items: center;
     justify-content: space-between;
     margin-left: 15px;
+}
+.card-title {
+    width: 100%;
+    padding-left: 10px;
+    white-space: nowrap;
 }
 .card-content {
     width: 420px;

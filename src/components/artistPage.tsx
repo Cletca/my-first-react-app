@@ -8,52 +8,42 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Avatar } from "@mui/material";
 
 // Hooks
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 
 // Components
 import ArtistAlbumList from "./artistAlbumUL.tsx";
 import ArtistTrackUL from "./ArtistTrackUL.tsx";
 
+// Context
+import {ArtistContext} from "../artistProvider.tsx";
+
 export default function ArtistPage() {
 
-    const img = "#";
-    const name = "Artist name";
+    const artistContext = useContext(ArtistContext);
 
-    const [opacity, setOpacity] = useState(1);
+    const { artistData } = artistContext;
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-
-            const threshold = 300;
-
-            const newOpacity = Math.max(1 - scrollY / threshold, 0.8);
-            setOpacity(newOpacity);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    console.log(artistData);
 
     return (
         <div className="ArtistPage">
             <div
                 className="top-container"
-                style={{ opacity: opacity }}
             >
 
                 <Avatar
                     alt="#"
-                    src={img}
+                    src={artistData.img}
                     sx={{
                         width: "225px",
                         height: "225px",
-                        margin: "20px 0 0 50px",
+                        margin: "0 0 0 50px",
                         boxShadow: "4px 4px 10px rgba(0, 0, 0, 0.3)",
                     }}
                 />
 
-                <h2 className="artist-page-name">{name}</h2>
+                <h2 className="artist-page-name">{artistData.name}</h2>
+                <span className="artist-page-subs">Followers: {artistData.subs}</span>
 
             </div>
             <div className="bottom-container">

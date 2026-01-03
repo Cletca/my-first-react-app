@@ -9,8 +9,8 @@ type MainProps = {
 import {useContext} from 'react';
 
 import HomePage from "./homePage.tsx";
-
 import ArtistPage from "./artistPage.tsx";
+import MusicPlayer from "./musicPlayer.tsx";
 
 import {NavigationContext} from "../navigationContext.tsx";
 
@@ -41,7 +41,7 @@ export default function Main({isMenuOpen}: MainProps) {
                         <Button>History</Button>
                     </li>
                     <li>
-                        <Button>Playlists</Button>
+                        <Button onClick={() => setCurrentPage("playlist")}>Playlists</Button>
                     </li>
                     <li>
                         <Button>Liked Songs</Button>
@@ -56,6 +56,8 @@ export default function Main({isMenuOpen}: MainProps) {
                 <div className="main-center" style={{ paddingLeft:  isMenuOpen ? '250px' : '43px' }}>
                     {currentPage === "home" && <HomePage />}
                     {currentPage === "artist" && <ArtistPage />}
+                    {currentPage === "playlist" && <PlaylistPage />}
+                    <MusicPlayer />
                 </div>
 
             <div className="main-right">

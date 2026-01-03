@@ -35,7 +35,7 @@ export default function NavBar({toggleMenu}: NavBarProps) {
                         <Button onClick={() => setCurrentPage("home")} variant="text" color="success">Home</Button>
                     </li>
                     <li className="playlists-btn">
-                        <Button variant="text" color="success">Playlist</Button>
+                        <Button onClick={() => setCurrentPage("playlist")} variant="text" color="success">Playlist</Button>
                     </li>
                     <li className="artistt-btn">
                         <Button variant="text" color="success">Artist</Button>

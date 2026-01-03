@@ -4,13 +4,18 @@ import './artistPageLI.css';
 import FavIcon from '@mui/icons-material/AddCircleOutline';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
+// Hooks
 import { useState } from 'react';
+// Context
+import { usePlayer } from "../playerContext.tsx";
 
 interface ArtistPageLiProps {
     id: number;
     name: string;
+    image: string;
     views: number;
     time: number;
+    src: string;
 }
 
 function formatTime(seconds: number): string {
@@ -24,22 +29,35 @@ function viewCount(num: number): string {
     return num.toLocaleString('en-US');
 }
 
-export default function ArtistPageLI({ id, name, views, time } : ArtistPageLiProps) {
+
+
+export default function ArtistPageLI({ id, name, image, views, time, src } : ArtistPageLiProps) {
 
     const [hover, setHover] = useState(false);
+    const { setCurrentTrack } = usePlayer();
+
+    function liHandleClick() {
+        setCurrentTrack({
+            id: id,
+            name: name,
+            image: image,
+            src: src
+        });
+    }
 
     return (
         <li
             className="artist-page-card"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
+            onClick={liHandleClick}
         >
             <div className="card-container">
                 <div className="card-header">
                     <span className="card-number">{hover ? <PlayArrowIcon /> : id}</span>
-                    <img src="#" alt="#"/>
-                    <span className="card-title">{name}</span>
+                    <img src={image} alt="#"/>
                 </div>
+                <span className="card-title">{name}</span>
                 <div className="card-content">
                     <div className="card-name-views">
                         <span className="card-views">{viewCount(views)}</span>
