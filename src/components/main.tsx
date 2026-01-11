@@ -8,9 +8,9 @@ type MainProps = {
 
 import {useContext} from 'react';
 
-import HomePage from "./homePage.tsx";
-import ArtistPage from "./artistPage.tsx";
-import MusicPlayer from "./musicPlayer.tsx";
+import HomePage from "./pages/homePage/homePage.tsx";
+import ArtistPage from "./pages/artistPage.tsx";
+import MusicPlayer from "./UI-Components/musicPlayer.tsx";
 
 import {NavigationContext} from "../navigationContext.tsx";
 
@@ -56,7 +56,7 @@ export default function Main({isMenuOpen}: MainProps) {
                 <div className="main-center" style={{ paddingLeft:  isMenuOpen ? '250px' : '43px' }}>
                     {currentPage === "home" && <HomePage />}
                     {currentPage === "artist" && <ArtistPage />}
-                    {currentPage === "playlist" && <PlaylistPage />}
+                    {/*{currentPage === "playlist" && <PlaylistPage />}*/}
                     <MusicPlayer />
                 </div>
 

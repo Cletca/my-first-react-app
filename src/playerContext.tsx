@@ -9,18 +9,21 @@ interface Track {
 }
 
 interface PlayerContextType {
+    currentPlaylist: Track[];
+    setCurrentPlaylist: (currentPlaylist: Track[]) => void;
     currentTrack: Track | null;
     setCurrentTrack: (currentTrack: Track | null) => void;
     isPlaying: boolean;
-    setIsPlaying: (playing: boolean) => void;
+    setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const PlayerContext = createContext<PlayerContextType | null>(null);
 
 export function PlayerProvider({ children }: React.PropsWithChildren) {
 
+    const [currentPlaylist, setCurrentPlaylist] = useState<Track[]>([]);
     const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
-    const [isPlaying, setIsPlaying] = useState<boolean>(false);
+    const [isPlaying, setIsPlaying] = useState<boolean>(true);
 
     return (
         <PlayerContext.Provider
@@ -29,6 +32,8 @@ export function PlayerProvider({ children }: React.PropsWithChildren) {
                 setCurrentTrack,
                 isPlaying,
                 setIsPlaying,
+                currentPlaylist,
+                setCurrentPlaylist,
             }}
         >
             {children}

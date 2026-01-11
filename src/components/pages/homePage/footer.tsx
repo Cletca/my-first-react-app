@@ -1,0 +1,10 @@
+import './css/footer.css';
+
+export default function Footer() {
+    return (
+        <div className="footer-container">
+            <div className="contact-btns"></div>
+            <div className="text-contact"></div>
+        </div>
+    )
+}

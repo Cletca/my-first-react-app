@@ -2,9 +2,9 @@ import './App.css'
 
 import { useState } from 'react';
 
-import NavBar from "./components/navBar.tsx";
+import NavBar from "./components/UI-Components/navBar.tsx";
 import Main from "./components/main.tsx";
-import Footer from "./components/footer.tsx";
+import Footer from "./components/pages/homePage/footer.tsx";
 
 // Providers
 import { NavigationProvider } from "./navigationContext.tsx";
