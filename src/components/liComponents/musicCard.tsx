@@ -12,8 +12,13 @@ export interface MusicCardProps {
 
 export default function MusicCard({ image, name, author, views, onClick}: MusicCardProps) {
 
+    const handleClick = (event) => {
+        event.stopPropagation();
+        console.log('click');
+    }
+
     return (
-        <div className="music-card-container" onClick={onClick}>
+        <div className="music-card-container" onClick={onClick} role="button" tabIndex={0}>
 
             <div className="music-card-img">
                 <img src={image} alt="Photo" />
@@ -29,11 +34,14 @@ export default function MusicCard({ image, name, author, views, onClick}: MusicC
 
                 <div className="track-description">
                     <Button variant="text" sx={{
+                        position: "relative",
                         color: 'gray',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
+                        zIndex: '2',
                     }}
+                            onClick={handleClick}
                     >
                         {author}
                     </Button>

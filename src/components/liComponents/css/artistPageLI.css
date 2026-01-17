@@ -1,13 +1,14 @@
 .artist-page-card {
     width: 100%;
     height: 55px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: darkslategray;
+    background: none;
 }
 .artist-page-card:hover {
-    background: lightgray;
+    background: #323232;
     cursor: pointer;
     opacity: 0.7;
 }
@@ -27,6 +28,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    color: gray;
 }
 .card-container img {
     width: 45px;
@@ -49,6 +52,8 @@
     width: 100%;
     padding-left: 10px;
     white-space: nowrap;
+    font-weight: bold;
+    color: white;
 }
 .card-content {
     width: 420px;
@@ -61,6 +66,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: gray;
 }
 
 .card-btns {
@@ -68,6 +74,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: gray;
 }
 
 .fav-btn {
@@ -81,6 +88,7 @@
     background: none;
     transform: translateX(0);
     opacity: 0;
+    color: gray;
 }
 .fav-btn.visible {
     opacity: 1;
@@ -88,7 +96,8 @@
 }
 .fav-btn:hover,
 .song-options:hover {
-    background-color: gray;
+    scale: 1.1;
+    transition: scale 0.1s;
 }
 
 .song-options {
@@ -102,6 +111,7 @@
     background: none;
     opacity: 0;
     transform: translateX(0);
+    color: gray;
 }
 .song-options.visible {
     opacity: 1;

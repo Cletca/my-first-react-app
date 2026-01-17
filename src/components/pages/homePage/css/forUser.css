@@ -26,7 +26,8 @@
 }
 .for-you {
     margin: 30px;
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px #323232;
+    color: white;
 }
 .for-user-window {
     overflow: hidden;

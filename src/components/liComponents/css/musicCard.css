@@ -1,6 +1,7 @@
 /* Music-card */
 .music-card-container {
-    width: 235px;
+    position: relative;
+    width: 250px;
     height: 235px;
     display: flex;
     flex-direction: column;
@@ -10,12 +11,17 @@
     background: #3a3a3a;
     box-shadow: 3px 3px 5px black;
     border: none;
+    z-index: 1;
+}
+.music-card-container:hover {
+    cursor: pointer;
+    background: #4a4a4a;
 }
 
 .music-card-img {
     width: 100%;
     height: 150px;
-    background: gray;
+    background: green;
     border-radius: 10px;
 }
 .music-card-img img {
@@ -31,8 +37,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #3a3a3a;
-    color: white;
+    background: none;
+    color: gray;
 }
 
 .track-name-container {
@@ -47,6 +53,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: white !important;
 }
 
 .track-description {

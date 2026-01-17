@@ -1,6 +1,7 @@
 .artist-album-title-container {
     margin: 30px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #323232;
+    color: white;
 }
 .artist-album-title {
     margin-bottom: 8px;

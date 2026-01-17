@@ -27,9 +27,7 @@ export default function AlbumList() {
             className="albumList"
         >
             <div className="album-title-container">
-                <h3 className="album-title">
-                    Best Albums
-                </h3>
+                <h3>Best Albums</h3>
             </div>
             <div
                 className="album-container"

@@ -11,13 +11,14 @@
 }
 .main-container {
     width: 100%;
+    height: 100%;
     position: absolute;
     z-index: 2;
 }
 
 .top-container {
     width: 100%;
-    height: 25%;
+    height: 330px;
     display: flex;
     align-items: center;
     position: sticky;
@@ -28,8 +29,16 @@
 }
 .top-content {
     width: 100%;
+    height: 330px;
     padding: 20px 50px 20px 50px;
     z-index: 2;
+}
+.artist-page-name {
+    font-weight: bold;
+    color: white;
+}
+.artist-page-subs {
+    color: gray;
 }
 .bottom-container {
     width: 100%;
@@ -37,13 +46,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background: darkgray;
+    background: #1E1E1E;
     z-index: 2;
 }
 
-.artist-page-subs {
-    font-weight: bold;
-}
 .artist-btns {
     display: flex;
     flex-direction: row;
@@ -76,8 +82,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    border: 2px solid black;
-    color: black;
+    border: 2px solid gray;
+    color: gray;
     background: none;
     scale: 1;
     transition: scale 0.1s;
@@ -86,8 +92,10 @@
     scale: 1.05;
     transition: scale 0.1s;
     border: 2px solid white;
+    color: white;
 }
-.more-btn {
+.more-btn,
+.play-random-btn {
     width: 35px;
     height: 35px;
     display: flex;
@@ -99,13 +107,18 @@
     scale: 1;
     transition: scale 0.1s;
 }
-.more-btn:hover {
+.more-btn:hover,
+.play-random-btn:hover  {
     scale: 1.2;
     transition: scale 0.1s;
+}
+.play-random-btn {
+    color: gray;
 }
 
 .artist-title {
     margin: 25px 0 0 75px;
+    color: white;
 }
 
 .artist-tracks {
@@ -116,7 +129,7 @@
     padding: 10px 10px 10px 10px;
     margin: 25px 0 0 75px;
     border-radius: 10px;
-    background: dimgrey;
+    background: #1E1E1E;
 }
 .see-more-btn {
     width: 85px;

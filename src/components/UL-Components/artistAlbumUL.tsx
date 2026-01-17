@@ -27,9 +27,7 @@ export default function ArtistAlbumList() {
             className="albumList"
         >
             <div className="artist-album-title-container">
-                <h3 className="artist-album-title">
-                    Artist Albums
-                </h3>
+                <h3>Artist Albums</h3>
             </div>
             <div
                 className="artist-album-container"

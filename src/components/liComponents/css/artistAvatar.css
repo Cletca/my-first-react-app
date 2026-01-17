@@ -4,7 +4,7 @@
     border-radius: 15px;
     border: none;
     background: none;
-    background: gray;
+    background: #2E2E2E;
 }
 .artist-container:hover {
     background: darkgray;
@@ -25,5 +25,10 @@
 .artist-name,
 .artist-subs {
     margin: 0 0 5px 10px;
-    color: black;
+}
+.artist-name {
+    color: white;
+}
+.artist-subs {
+    color: gray;
 }
