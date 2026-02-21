@@ -10,6 +10,7 @@ import Footer from "./components/pages/homePage/footer.tsx";
 import { NavigationProvider } from "./navigationContext.tsx";
 import { ArtistProvider } from "./artistProvider.tsx";
 import { PlayerProvider } from "./playerContext.tsx";
+import { PlaylistProvider } from "./playlistContext.tsx";
 
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,17 +20,19 @@ export default function App() {
     return (
         <NavigationProvider>
             <ArtistProvider>
-                <PlayerProvider>
-                    <header>
-                        <NavBar toggleMenu={toggleMenu} />
-                    </header>
-                    <main className="main">
-                        <Main isMenuOpen={isMenuOpen} />
-                    </main>
-                    <footer className="footer">
-                        <Footer />
-                    </footer>
-                </PlayerProvider>
+                <PlaylistProvider>
+                    <PlayerProvider>
+                        <header>
+                            <NavBar toggleMenu={toggleMenu} />
+                        </header>
+                        <main className="main">
+                            <Main isMenuOpen={isMenuOpen} />
+                        </main>
+                        <footer className="footer">
+                            <Footer />
+                        </footer>
+                    </PlayerProvider>
+                </PlaylistProvider>
             </ArtistProvider>
         </NavigationProvider>
     );

@@ -1,6 +1,18 @@
 import './css/musicCard.css';
 
+// MUI
 import { Button } from "@mui/material";
+
+// Context
+import {useArtistData} from "../../artistProvider.tsx";
+import {NavigationContext} from "../../navigationContext.tsx";
+
+// Hooks
+import { useContext } from "react";
+
+// Other
+import {artists} from "../../data/artists.ts";
+import {artistsSongsMap} from "../../data/artistsSongs.ts";
 
 export interface MusicCardProps {
     image: string;
@@ -12,9 +24,31 @@ export interface MusicCardProps {
 
 export default function MusicCard({ image, name, author, views, onClick}: MusicCardProps) {
 
+    const artistContext = useArtistData();
+    const navContext = useContext(NavigationContext);
+
+    if (!artistContext || !navContext) return null;
+
+    const { setArtistData, setArtistSongs } = artistContext;
+    const { setCurrentPage } = navContext;
+
     const handleClick = (event) => {
         event.stopPropagation();
-        console.log('click');
+
+        const artist = artists.find(e => e.name === author);
+        const artistSongs = artistsSongsMap[author as keyof typeof artistsSongsMap] || [];
+
+        if (artist) {
+            setArtistData({
+                name: artist.name,
+                subs: artist.subs,
+                img: artist.image,
+            });
+            setArtistSongs(artistSongs);
+            setCurrentPage("artist");
+        } else {
+            console.error("Unable to find artist");
+        }
     }
 
     return (

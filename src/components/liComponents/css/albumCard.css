@@ -5,11 +5,11 @@
     gap: 5px;
     flex-direction: column;
     border-radius: 15px;
-    background-color: #2E2E2E;
+    background-color: #2a2a2a;
 }
 .album-card:hover {
     cursor: pointer;
-    background-color: darkgray;
+    background-color: #3a3a3a;
 }
 
 .album-card-top {

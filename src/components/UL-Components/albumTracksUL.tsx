@@ -1,17 +1,35 @@
-import './css/artistTrackUL.css'
+import './css/albumTracksUL.css';
 
+// TEST
 import ArtistPageLI from "../liComponents/artistPageLI.tsx";
 
 // CONTEXT
-import {usePlayer} from "../../playerContext.tsx";
-import {useArtistData} from "../../artistProvider.tsx";
+import { usePlayer } from "../../playerContext.tsx";
+import { usePlaylist } from "../../playlistContext.tsx";
+import { NavigationContext } from "../../navigationContext.tsx";
 
 // HOOKS
-import { useState } from "react";
+import {useState, useContext} from "react";
 
-export default function ArtistTrackUL() {
+interface Track {
+    id: number;
+    name: string;
+    image: string;
+    views: number;
+    time: number;
+    src: string;
+}
+
+export default function TrackList() {
+
+    const navContext = useContext(NavigationContext);
+
+    if (!navContext) return null;
+
+    const { setCurrentPage } = navContext;
     const { setCurrentTrack, setCurrentPlaylist } = usePlayer();
-    const { artistSongs } = useArtistData();
+    const { playlist } = usePlaylist();
+
     const [ visibleTracks, setVisibleTracks ] = useState(5);
 
     const showMoreTracks = () => {
@@ -23,11 +41,23 @@ export default function ArtistTrackUL() {
         console.log("Visible Tracks:", visibleTracks - 5);
     }
 
+    function cardHandleClick(track: Track) {
+
+
+        setCurrentPage("playlist");
+        setCurrentPlaylist(playlist);
+        setCurrentTrack({
+            id: track.id,
+            name: track.name,
+            image: track.image,
+            src: track.src,
+        });
+    }
 
     return (
         <div className="trackUL-container">
             <ul className="artist-page-trackUL">
-            {artistSongs.slice(0, visibleTracks).map((track, index) => (
+                {playlist.slice(0, visibleTracks).map((track, index) => (
                     <ArtistPageLI
                         key={track.id}
                         id={index + 1}
@@ -36,20 +66,12 @@ export default function ArtistTrackUL() {
                         time={track.time}
                         image={track.image}
                         src={track.src}
-                        onClick={() => {
-                            setCurrentPlaylist(artistSongs);
-                            setCurrentTrack({
-                                id: track.id,
-                                name: track.name,
-                                image: track.image,
-                                src: track.src,
-                            });
-                        }}
+                        onClick={() => {cardHandleClick(track)}}
                     />
-            ))}
+                ))}
             </ul>
 
-            {visibleTracks < artistSongs.length && (
+            {visibleTracks < playlist.length && (
                 <button onClick={showMoreTracks} className="see-more-btn">
                     See more
                 </button>
@@ -61,5 +83,5 @@ export default function ArtistTrackUL() {
                 </button>
             )}
         </div>
-    )
+    );
 }

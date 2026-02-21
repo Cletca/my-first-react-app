@@ -33,12 +33,12 @@ export default function MoreInfoBtn() {
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
                 sx={{
-                    color: 'black',
+                    scale: "1",
+                    color: 'gray',
                     '&:hover': {
                         background: 'none',
                         scale: '1.05',
                         transition: 'scale 0.1s',
-                        color: 'white',
                     }
                 }}
                 disableRipple

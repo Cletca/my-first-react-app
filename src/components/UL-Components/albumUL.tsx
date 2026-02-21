@@ -62,6 +62,7 @@ export default function AlbumList() {
                                         name={album.name}
                                         artists={album.artist}
                                         genre={album.genre}
+                                        views={album.views}
                                     />
                                 </li>
                             ))}

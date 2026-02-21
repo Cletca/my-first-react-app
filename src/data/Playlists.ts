@@ -5,6 +5,7 @@ export const Playlists = [
         genre: "electro-pop / art-pop",
         artist: "Grimes, The Weeknd, Dua Lipa, Charlie Puth",
         img: "Img/album-img/1.jpg",
+        views: 6593574,
     },
     {
         id: 2,
@@ -12,6 +13,7 @@ export const Playlists = [
         genre: "alternative rock / indie rock",
         artist: "Arctic Monkeys, Linkin Park, Imagine Dragons",
         img: "Img/album-img/2.jpg",
+        views: 867395,
     },
     {
         id: 3,
@@ -19,6 +21,7 @@ export const Playlists = [
         genre: "soul / jazz-pop",
         artist: "Adele, Sam Smith, Norah Jones",
         img: "Img/album-img/3.jpg",
+        views: 9283572,
     },
     {
         id: 4,
@@ -26,6 +29,7 @@ export const Playlists = [
         genre: "hip-hop / electronic / trap",
         artist: "Travis Scott, Eminem, Doja Cat, Post Malone",
         img: "Img/album-img/4.jpg",
+        views: 74968366,
     },
     {
         id: 5,
@@ -33,6 +37,7 @@ export const Playlists = [
         genre: "indie pop / synth-pop",
         artist: "The 1975, Coldplay, Hasley",
         img: "Img/album-img/5.jpg",
+        views: 50285639,
     },
     {
         id: 6,
@@ -40,6 +45,7 @@ export const Playlists = [
         genre: "dark pop / art-indie",
         artist: "Billie Eilish, Lana Del Rey, Florence + The Machine",
         img: "Img/album-img/6.jpg",
+        views: 96306837,
     },
     {
         id: 7,
@@ -47,6 +53,7 @@ export const Playlists = [
         genre: "pop-rap / R&B",
         artist: "Drake, The Weeknd, SZA",
         img: "Img/album-img/7.jpg",
+        views: 724667,
     },
     {
         id: 8,
@@ -54,6 +61,7 @@ export const Playlists = [
         genre: "pop / indie / rock",
         artist: "Imagine Dragons, Ed Sheeran, OneRepublic",
         img: "Img/album-img/8.jpg",
+        views: 1285963,
     },
     {
         id: 9,
@@ -61,6 +69,7 @@ export const Playlists = [
         genre: "EDM / pop",
         artist: "Calvin Harris, David Guetta, Dua Lipa",
         img: "Img/album-img/9.jpg",
+        views: 37648663,
     },
     {
         id: 10,
@@ -68,5 +77,6 @@ export const Playlists = [
         genre: "cinematic pop / orchestrual electronic",
         artist: "Hans Zimmer, Aurora, Woodkid",
         img: "Img/album-img/10.jpg",
+        views: 2748694,
     }
 ]

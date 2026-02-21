@@ -39,8 +39,8 @@ export default function ArtistAvatarUL() {
         });
 
         const songs = artistsSongsMap[artist.name as keyof typeof artistsSongsMap] || [];
-        setArtistSongs(songs);
 
+        setArtistSongs(songs);
         setCurrentPage("artist");
     }
 

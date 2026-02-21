@@ -14,23 +14,41 @@ import RepeatIcon from '@mui/icons-material/Repeat'; // LoopOff
 //Hooks
 import { useState } from 'react';
 
-// Player
+// Context
 import { usePlayer } from "../../../playerContext.tsx";
+import { usePlaylist } from "../../../playlistContext.tsx";
+
+// Components
+import TrackList from "../../UL-Components/albumTracksUL.tsx";
 
 export default function PlaylistPage() {
-    const {isPlaying, setIsPlaying, setCurrentTrack, setCurrentPlaylist} = usePlayer();
 
-    const playlist = []
+    const { isPlaying, setIsPlaying, currentPlaylist, setCurrentTrack, setCurrentPlaylist} = usePlayer();
+    const { albumData, playlist } = usePlaylist();
 
     const [favorite, setFavorite] = useState(false);
     const [random, setRandom] = useState(false);
     const [loop, setLoop] = useState(false);
+    const [pause, setPause] = useState(true);
+
+    if (!albumData) return null;
+
+    const image = albumData.img;
+    const name = albumData.name;
+    const views = albumData.views;
+
+    function viewCount(num: number): string {
+        return num.toLocaleString('en-US');
+    }
 
     function playHandleClick() {
+        setPause((prev) => !prev);
         setIsPlaying((prev) => !prev);
-        setCurrentPlaylist(playlist)
-        setCurrentTrack(playlist[0])
+        setCurrentPlaylist(playlist);
+        setCurrentTrack(playlist[0]);
     }
+
+    console.log(currentPlaylist)
 
     return (
         <div className="PlaylistPage">
@@ -45,7 +63,7 @@ export default function PlaylistPage() {
                     <Avatar
                         variant="rounded"
                         alt="#"
-                        src="#"
+                        src={image}
                         sx={{
                             width: "225px",
                             height: "225px",
@@ -53,8 +71,8 @@ export default function PlaylistPage() {
                         }}
                     />
 
-                    <h2 className="playlist-page-name">Album name</h2>
-                    <p className="playlist-page-subs">Views</p>
+                    <h2 className="playlist-page-name">{name}</h2>
+                    <p className="playlist-page-subs">Views: {viewCount(views)}</p>
                 </div>
 
                 <div className="bottom-container">
@@ -90,8 +108,8 @@ export default function PlaylistPage() {
                     </div>
 
                     <div className="music-container">
-                        <div className="music-list">
-
+                        <div className="music-list artist-tracks">
+                            <TrackList/>
                         </div>
                     </div>
 
